@@ -3,8 +3,7 @@ resource "aws_security_group" "vpc-ssh" {
   description = "Dev Pc SSH"
   
 
-  ingress = [
-    {
+  ingress {
       description      = "allow port 22"
       from_port        = 22
       to_port          = 22
@@ -12,17 +11,16 @@ resource "aws_security_group" "vpc-ssh" {
       cidr_blocks      = ["0.0.0.0/0"]
       
     }
-  ]
+  
 
-  egress = [
-    {
+  egress{
       from_port        = 0
       to_port          = 0
       protocol         = "-1" #tcp upd all allow
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
     }
-  ]
+  
 
   tags = {
     Name = "vpc-ssh-gopal"
