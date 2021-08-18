@@ -11,7 +11,7 @@ terraform {
 #Provider Block
 provider "aws"{
     profile = "default"
-    reqion = ""
+    region = ""
 }
 
 
