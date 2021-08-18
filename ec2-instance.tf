@@ -1,22 +1,9 @@
-#Terrform Setting Block
-terraform {
-  required_providers {
-    aws = {
-      version = ">= 2.7.0"
-      source = "hashicorp/aws"
-    }
+resource "aws_instance" "myec2vm" {
+  ami = data.aws_ami.amznlinux1.id
+  instance_type = var.instance_type
+  user_data = file("${path.module}/app1-install.sh")
+  vpc_security_group_ids = [aws_security_group.vpc-ssh.id,aws_security_group.vpc-http.id]
+  tags = {
+    "Name" = "gopal-ec2"
   }
-}
-
-#Provider Block
-provider "aws"{
-    profile = "default"
-    region = ""
-}
-
-
-#Resource Block
-resource "aws_instance" "ec2demo"{
-    ami = 
-    instance_type = "t2.micro"
 }
