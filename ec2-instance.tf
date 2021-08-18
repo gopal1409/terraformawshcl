@@ -6,7 +6,7 @@ terraform {
 }
 
 #Provider Block
-provide "aws"{
+provider "aws"{
     profile = "default"
     reqion = ""
 }
