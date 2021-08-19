@@ -1,5 +1,5 @@
 resource "aws_security_group" "vpc-ssh" {
-  name        = "vpc-ssh-gopal"
+  name        = "vpc-ssh-gopal1"
   description = "Dev Pc SSH"
   
 

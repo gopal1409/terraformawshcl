@@ -11,6 +11,7 @@ terraform {
   bucket = "terraform-state-gopal"
   key = "dev/terraform.tfstate"
   region = "ap-northeast-2"
+  dynamodb_table = "gopal-ec2-project"
  }
 }
 #adding backend s3 bucket for remote state storage
