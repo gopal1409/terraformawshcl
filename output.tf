@@ -8,5 +8,5 @@ output "instance_publicip" {
 
 output "for_putput_map1" {
   description = "Ec2 instance public dns"
-  value = {for instance in aws_instance.myec2vm: instance.id=> instance.public_dn}
+  value = {for instance in aws_instance.myec2vm: instance.id=> instance.public_dns}
 }
