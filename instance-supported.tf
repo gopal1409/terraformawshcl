@@ -16,7 +16,7 @@ for_each = toset(data.aws_availability_zones.my_azones.names)
 
   filter {
     name = "location"
-    values = [each.key]
+    values = [us-east-2a]
   }
   location_type = "availability-zone"
 }
