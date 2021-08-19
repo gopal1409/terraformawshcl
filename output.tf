@@ -3,7 +3,7 @@
 
 output "instance_publicip" {
   description = "Ec2 instance public ip"
-  value = aws_instance.myec2vm.public_ip
+  value = [for instance in aws_instance.myec2vm: instance.public_ip]
 }
 
 output "instance_publicdns" {
