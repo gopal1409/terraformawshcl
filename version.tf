@@ -9,7 +9,7 @@ terraform {
   }
   backend "s3" {
   bucket = "terraform-state-gopal"
-  key = "/dev/terraform.tfstate"
+  key = "dev/terraform.tfstate"
   region = "ap-northeast-2"
  }
 }
