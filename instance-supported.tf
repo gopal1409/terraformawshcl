@@ -8,7 +8,7 @@ data "aws_availability_zones" "my_azones" {
 
 #check if the repective instance type is supporte in that specific region or not
 data "aws_ec2_instance_type_offering" "my_inst_type" {
-#for_each = toset(data.aws_availability_zones.my_azones.names)
+for_each = toset(data.aws_availability_zones.my_azones.names)
   filter {
     name   = "instance-type"
     values = ["t3.micro"]
@@ -16,7 +16,7 @@ data "aws_ec2_instance_type_offering" "my_inst_type" {
 
   filter {
     name = "location"
-    values = ["us-east-2a"]
+    values = ["each.key"]
   }
   location_type = "availability-zone"
 }
